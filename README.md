@@ -32,6 +32,7 @@ To play a mini-game, simply run the script and choose the game you want to play 
 
 ```bash
 python mini_games.py
+```
 Game Descriptions
 Guess the Number
 Guess a randomly generated number between 1 and 100.
