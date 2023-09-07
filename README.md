@@ -32,3 +32,65 @@ To play a mini-game, simply run the script and choose the game you want to play 
 
 ```bash
 python mini_games.py
+Game Descriptions
+Guess the Number
+Guess a randomly generated number between 1 and 100.
+
+Math Quiz
+Solve random math questions within a time limit.
+
+File Explorer
+Navigate directories, list files, and perform basic file operations.
+
+System Information
+Display information about your system, including Python version and more.
+
+Date and Time Quiz
+Answer questions about dates, time zones, and date arithmetic.
+
+Word Frequency Counter
+Count word occurrences in a text file and display the most common words.
+
+JSON Data Quiz
+Answer questions based on data loaded from a JSON file.
+
+Regex Pattern Matcher
+Match strings to predefined regular expressions.
+
+Web Page Scraper
+Fetch content from a web page and extract specific information.
+
+Database Query Game
+Query a SQLite database for information and perform calculations.
+
+CSV Data Analyzer
+Load and analyze data from a CSV file.
+
+Command-Line Adventure
+Play a text-based adventure game using command-line commands.
+
+Serialization Challenge
+Serialize and deserialize Python objects using the JSON module.
+
+Object Serialization Puzzle
+Solve puzzles by correctly serializing and deserializing complex objects using the pickle module.
+
+Process Management Simulator
+Manage virtual processes, spawn, terminate, and communicate with them using subprocess.
+
+Hangman
+Guess the hidden word by entering letters.
+
+Tic-Tac-Toe
+Play the classic game of Tic-Tac-Toe against a friend.
+
+Snake Game
+Control the snake to eat food and avoid collisions.
+
+Random Password Maker
+Generate random passwords with specified characteristics.
+
+License
+This collection of Python mini-games is open-source and available under the MIT License.
+
+Enjoy learning and playing with Python!
