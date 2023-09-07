@@ -373,7 +373,7 @@ def tic_tac_toe():
 def snake_game():
     clear_terminal()
     print("Snake Game:")
-    print("Use arrow keys to control the snake.")
+    print("Use WASD keys to control the snake.")
     print("Eat the food ('@') to grow the snake.")
     print("Avoid running into the walls or yourself.")
     print("Press 'q' to quit the game.")
@@ -388,11 +388,7 @@ def snake_game():
     snake_direction = 'RIGHT'
 
     # Initialize snake body
-    snake_body = [
-        {'x': snake_x, 'y': snake_y},
-        {'x': snake_x - 1, 'y': snake_y},
-        {'x': snake_x - 2, 'y': snake_y}
-    ]
+    snake_body = [{'x': snake_x, 'y': snake_y}]
 
     # Initialize food position
     food = {'x': random.randint(1, width - 2), 'y': random.randint(1, height - 2)}
@@ -409,9 +405,9 @@ def snake_game():
             for x in range(width):
                 if x == 0 or x == width - 1 or y == 0 or y == height - 1:
                     print('#', end=' ')
-                elif x == snake_x and y == snake_y:
+                elif {'x': x, 'y': y} == snake_body[0]:
                     print('O', end=' ')
-                elif {'x': x, 'y': y} in snake_body:
+                elif {'x': x, 'y': y} in snake_body[1:]:
                     print('o', end=' ')
                 elif x == food['x'] and y == food['y']:
                     print('@', end=' ')
@@ -425,23 +421,23 @@ def snake_game():
         # Handle user input
         if key == 'q':
             break
-        elif key == 'LEFT' and snake_direction != 'RIGHT':
+        elif key == 'a' and snake_direction != 'RIGHT':
             snake_direction = 'LEFT'
-        elif key == 'RIGHT' and snake_direction != 'LEFT':
+        elif key == 'd' and snake_direction != 'LEFT':
             snake_direction = 'RIGHT'
-        elif key == 'UP' and snake_direction != 'DOWN':
+        elif key == 'w' and snake_direction != 'DOWN':
             snake_direction = 'UP'
-        elif key == 'DOWN' and snake_direction != 'UP':
+        elif key == 's' and snake_direction != 'UP':
             snake_direction = 'DOWN'
 
         # Update snake position
-        if snake_direction == '4':
+        if snake_direction == 'LEFT':
             snake_x -= 1
-        elif snake_direction == '8':
+        elif snake_direction == 'RIGHT':
             snake_x += 1
-        elif snake_direction == '6':
+        elif snake_direction == 'UP':
             snake_y -= 1
-        elif snake_direction == '5':
+        elif snake_direction == 'DOWN':
             snake_y += 1
 
         # Check for collision with food
