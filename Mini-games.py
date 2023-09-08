@@ -484,7 +484,7 @@ def bubble_sort_visualizer():
     clear_terminal()
     print("Bubble Sort Visualizer")
     num_bars = 20  # You can change this to the number of bars you want to sort
-    bars = [random.randint(1, 20) for _ in range(num_bars)]
+    bars = [random.randint(1, 22) for _ in range(num_bars)]
 
     # Increment all bars by 1
     bars = [bar + 1 for bar in bars]
