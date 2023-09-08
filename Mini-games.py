@@ -12,7 +12,7 @@ import csv
 import argparse
 import pickle
 import subprocess
-
+import time
 
 def clear_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -480,79 +480,124 @@ def random_password(length, letters=True, numbers=True, symbols=True):
         characters += string.punctuation
     return ''.join(random.choice(characters) for _ in range(length))
 
-def main():
+def bubble_sort_visualizer():
     clear_terminal()
-    print("Select a mini-game to play:")
-    print("1. Guess the Number")
-    print("2. Math Quiz")
-    print("3. File Explorer")
-    print("4. System Information")
-    print("5. Date and Time Quiz")
-    print("6. Word Frequency Counter")
-    print("7. JSON Data Quiz")
-    print("8. Regex Pattern Matcher")
-    print("9. Web Page Scraper")
-    print("10. Database Query Game")
-    print("11. CSV Data Analyzer")
-    print("12. Command-Line Adventure")
-    print("13. Serialization Challenge")
-    print("14. Object Serialization Puzzle")
-    print("15. Process Management Simulator")
-    print("16. Hangman")
-    print("17. Tic-Tac-Toe")
-    print("18. Snake Game")
-    print("19. Random Password Maker")
-    
-    choice = input("Enter the number of the mini-game you want to play: ")
-    try:
-        choice = int(choice)
-        if choice == 1:
-            guess_the_number()
-        elif choice == 2:
-            math_quiz()
-        elif choice == 3:
-            file_explorer()
-        elif choice == 4:
-            system_information()
-        elif choice == 5:
-            date_and_time_quiz()
-        elif choice == 6:
-            word_frequency_counter()
-        elif choice == 7:
-            json_data_quiz()
-        elif choice == 8:
-            regex_pattern_matcher()
-        elif choice == 9:
-            web_page_scraper()
-        elif choice == 10:
-            database_query_game()
-        elif choice == 11:
-            csv_data_analyzer()
-        elif choice == 12:
-            command_line_adventure()
-        elif choice == 13:
-            serialization_challenge()
-        elif choice == 14:
-            object_serialization_puzzle()
-        elif choice == 15:
-            process_management_simulator()
-        elif choice == 16:
-            hangman()
-        elif choice == 17:
-            tic_tac_toe()
-        elif choice == 18:
-            snake_game()
-        elif choice == 19:
-            length = int(input("Enter the length of the password: "))
-            letters = input("Include letters? (y/n): ").lower() == 'y'
-            numbers = input("Include numbers? (y/n): ").lower() == 'y'
-            symbols = input("Include symbols? (y/n): ").lower() == 'y'
-            password = random_password(length, letters, numbers, symbols)
-            print(f"Generated password: {password}")
-        else:
-            print("Invalid choice.")
-    except ValueError:
-        print("Invalid input. Please enter a valid number.")
+    print("Bubble Sort Visualizer")
+    num_bars = 20  # You can change this to the number of bars you want to sort
+    bars = [random.randint(1, 20) for _ in range(num_bars)]
 
+    # Increment all bars by 1
+    bars = [bar + 1 for bar in bars]
+
+    def print_bars(bars):
+        max_height = max(bars)
+        for height in reversed(range(1, max_height + 1)):
+            bar_line = ""
+            for bar_height in bars:
+                if bar_height >= height:
+                    bar_line += "█ "
+                else:
+                    bar_line += "  "
+            print(bar_line)
+
+    while True:
+        clear_terminal()
+        print("Bubble Sort Visualizer")
+        print_bars(bars)
+        swapped = False
+        for i in range(len(bars) - 1):
+            if bars[i] > bars[i + 1]:
+                bars[i], bars[i + 1] = bars[i + 1], bars[i]
+                swapped = True
+                time.sleep(0.06)  # Add a slight delay for visualization
+                clear_terminal()
+                print("Bubble Sort Visualizer")
+                print_bars(bars)
+        if not swapped:
+            clear_terminal()
+            break
+
+    clear_terminal()
+    print_bars(bars)  # Display the sorted bars
+    input("Press Enter to continue...")
+
+def main():
+    while True:
+        clear_terminal()
+        print("Mini-Game Menu:")
+        print("1. Guess the Number")
+        print("2. Math Quiz")
+        print("3. File Explorer")
+        print("4. System Information")
+        print("5. Date and Time Quiz")
+        print("6. Word Frequency Counter")
+        print("7. JSON Data Quiz")
+        print("8. Regex Pattern Matcher")
+        print("9. Web Page Scraper")
+        print("10. Database Query Game")
+        print("11. CSV Data Analyzer")
+        print("12. Command-Line Adventure")
+        print("13. Serialization Challenge")
+        print("14. Object Serialization Puzzle")
+        print("15. Process Management Simulator")
+        print("16. Hangman")
+        print("17. Tic-Tac-Toe")
+        print("18. Snake Game")
+        print("19. Random Password Maker")
+        print("20. Bubble Sort Visualizer")
+        print("21. Exit")
+        
+        choice = input("Enter the number of the mini-game you want to play (or '21' to exit): ")
+        try:
+            choice = int(choice)
+            if choice == 1:
+                guess_the_number()
+            elif choice == 2:
+                math_quiz()
+            elif choice == 3:
+                file_explorer()
+            elif choice == 4:
+                system_information()
+            elif choice == 5:
+                date_and_time_quiz()
+            elif choice == 6:
+                word_frequency_counter()
+            elif choice == 7:
+                json_data_quiz()
+            elif choice == 8:
+                regex_pattern_matcher()
+            elif choice == 9:
+                web_page_scraper()
+            elif choice == 10:
+                database_query_game()
+            elif choice == 11:
+                csv_data_analyzer()
+            elif choice == 12:
+                command_line_adventure()
+            elif choice == 13:
+                serialization_challenge()
+            elif choice == 14:
+                object_serialization_puzzle()
+            elif choice == 15:
+                process_management_simulator()
+            elif choice == 16:
+                hangman()
+            elif choice == 17:
+                tic_tac_toe()
+            elif choice == 18:
+                snake_game()
+            elif choice == 19:
+                length = int(input("Enter the length of the password: "))
+                letters = input("Include letters? (y/n): ").lower() == 'y'
+                numbers = input("Include numbers? (y/n): ").lower() == 'y'
+                symbols = input("Include symbols? (y/n): ").lower() == 'y'
+                password = random_password(length, letters, numbers, symbols)
+                print(f"Generated password: {password}")
+            elif choice == 20:  # Add the choice for the bubble sort visualizer
+                bubble_sort_visualizer()
+            else:
+                print("Invalid choice.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 if __name__ == '__main__':
     main()
