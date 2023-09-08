@@ -22,7 +22,8 @@ Welcome to the Python Mini-Games Collection! This repository contains a diverse 
 17. [Tic-Tac-Toe](#tic-tac-toe)
 18. [Snake Game](#snake-game)
 19. [Random Password Maker](#random-password-maker)
-
+20. [Bar Sort](#bar-sort)
+    
 ## Usage
 To play a mini-game, simply run the script and choose the game you want to play by entering the corresponding number. Follow the on-screen instructions for each game.
 ```bash
@@ -48,6 +49,7 @@ python mini_games.py
 17. Tic-Tac-Toe: Play the classic game of Tic-Tac-Toe against a friend.
 18. Snake Game: Control the snake to eat food and avoid collisions.
 19. Random Password Maker: Generate random passwords with specified characteristics.
+20. Bar Sort: Sort bars in ascending order. 
 
 ## License
 This collection of Python mini-games is open-source and available under the MIT License.
